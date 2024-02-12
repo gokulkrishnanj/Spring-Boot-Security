@@ -1,0 +1,34 @@
+version: /user/api/v1
+health: /health
+SECRET_KEY: qd50A1qT3iX7zP3w43l2s+zjYFrDRb7PatKle0zZbaNgOin+8k2/Q5rNVmcC5cvD
+
+server:
+#  servlet:
+#    context-path: /user
+  port: 8090
+spring:
+
+  # to disable default authentication provided to all the endpoints by spring security---------
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  #-----------------------------------------------
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    database: postgresql
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/mydb
+
+
+# --------------------------setting default username and password for spring security-----------------------------
+  security:
+    user:
+      name: user
+      password: user
+
+#-----------------------------------------------------------------------------------------------------------------
