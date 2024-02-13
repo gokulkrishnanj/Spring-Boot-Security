@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.API.AuthAPI;
 import com.example.demo.Models.Auth.AuthenticationResponse;
+import com.example.demo.Models.Auth.RequestRefreshToken;
 import com.example.demo.Models.Auth.UserLoginRequest;
 import com.example.demo.Models.Auth.UserSignupRequest;
 import com.example.demo.Service.AuthService;
@@ -23,5 +24,10 @@ public class AuthController implements AuthAPI {
     @Override
     public ResponseEntity<AuthenticationResponse> loginUser(UserLoginRequest userLoginRequest) {
         return new ResponseEntity<>(authService.loginUser(userLoginRequest), HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<AuthenticationResponse> getAccessTokenUsingRefreshToken(RequestRefreshToken requestRefreshToken){
+        return new ResponseEntity<>(authService.getAccessTokenUsingRefreshToken(requestRefreshToken),HttpStatus.OK);
     }
 }
