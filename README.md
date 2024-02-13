@@ -29,3 +29,4 @@ Step9 In between few configuration to execute the flow to decurity filter chain 
 
     Reference: https://www.youtube.com/watch?v=KxqlJblhzfI
     https://spring.io/guides/topicals/spring-security-architecture
+    https://medium.com/spring-boot/jwt-refresh-token-spring-security-c5b4646cdbd9
